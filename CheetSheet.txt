@@ -1,0 +1,73 @@
+"text=<text of webelement>"
+    directly used to locate a element using the text
+
+"'text of webelement'"
+    directly used to locate a element using the text 
+
+.newContext()
+    Opens a new Browser with new profile
+
+.newPage()
+    Opens a new page in the current browser newContext
+
+.click()
+    Clicks the element
+
+.fill("Selector","value to Send")
+    send keys 
+
+waitForTimeout(1000);
+    sleep
+
+npx playwright codegen
+    to record a test
+
+{ page } - Fixture 
+    will create a Isolated page for this test run.
+
+
+// in playwright.config.ts 
+
+use : {
+
+    // Name of the browser that runs tests. For example `chromium`, `firefox`, `webkit`.
+    browserName: 'chromium',
+
+    // Channel to use, for example "chrome", "chrome-beta", "msedge", "msedge-beta".
+    channel: 'chrome',
+
+    // Run browser in headless mode.
+    headless: false,
+
+    // Base URL to use in actions like `await page.goto('/')`.
+    baseURL: 'http://127.0.0.1:3000',
+
+    // Capture screenshot after each test failure.
+    screenshot: 'only-on-failure',
+
+    // Record trace only when retrying a test for the first time.
+    trace: 'on-first-retry',
+
+    // Record video only when retrying a test for the first time.
+    video: 'on-first-retry'
+
+}
+
+
+https://playwright.dev/docs/test-annotations
+Annottaing test or group of test
+    annotation: {
+        type: 'issue',
+        description: 'https://github.com/microsoft/playwright/issues/23180',
+    },
+
+https://playwright.dev/docs/test-cli
+npm init playwright@latest
+    To create a New playwright setup
+
+npx playwright test
+    To run the Playwright Test
+
+
+https://playwright.dev/docs/locators#locate-by-text
+    Find an element by the text it contains.
