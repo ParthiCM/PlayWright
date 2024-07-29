@@ -13,8 +13,10 @@
 .click()
     Clicks the element
 
-.fill("Selector","value to Send")
-    send keys 
+.fill("Selector","value to Send") ||  locator("Selector").Type("Value") || .keyboard
+    send keys 'fill()' will clear and send the value | 'type()' will append the value
+
+Alerts
 
 waitForTimeout(1000);
     sleep
@@ -71,3 +73,12 @@ npx playwright test
 
 https://playwright.dev/docs/locators#locate-by-text
     Find an element by the text it contains.
+
+
+Parallel  |  Serial
+    test.describe.configure({
+        mode : "parallel"
+    });
+    test.describe.configure({
+      mode : "serial"
+    });

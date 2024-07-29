@@ -1,0 +1,15 @@
+{
+ "data":[
+    {
+        "firstName":"Parthiban",
+        "lastName":"Murugan",
+        "gender":"male",
+        "DateOfBirth":"27/05/1978",
+        "Subjects":"Nothing Special",
+        "Hobbies" : ["Sports","Music"],
+        "ProfilePic" : "supportFiles\\parthi.jpg",
+        "CurrentAddress" : "qwertyfcvhiokjnkl",
+        "Location" : "Rajasthan,Jaipur"
+    }
+ ]
+}

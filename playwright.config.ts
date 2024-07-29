@@ -13,7 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   //testDir: './tests',
   //testMatch : ['tests/login.test.ts'],
-  testMatch: ['playGroundTest/editTest.ts'],
+  //testMatch: ['playGroundTest/editTest.ts'],
+  testMatch: ['playGroundTest/alertTest.spec.ts'],
 
 
 
@@ -44,18 +45,18 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
     actionTimeout: 10 * 1000,
-    navigationTimeout: 30 * 1000,
+    navigationTimeout: 50 * 1000,
     headless: false,
     screenshot: 'only-on-failure',
-    colorScheme: 'dark',
-
+    colorScheme: 'dark'
+       
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] }
     },
 
     // {
