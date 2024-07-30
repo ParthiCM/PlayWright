@@ -1,4 +1,4 @@
-import test, { BrowserContext } from "@playwright/test";
+import test, { BrowserContext, expect } from "@playwright/test";
 import { describe } from "node:test";
 describe("Testing Alerts in Serial Mode", () => {
    
@@ -29,7 +29,7 @@ describe("Testing Alerts in Serial Mode", () => {
    test("Confirm Alert and Verify", async () => {
       const page = await context.newPage();
       await page.goto(url);
-      await page.waitForTimeout(5000);
+      //await page.waitForTimeout(5000);
       page.on("dialog", async (dialog) => {
          var value = dialog.message();
          console.log(`Text content in the Alert Dialog is ${value}`);
@@ -37,6 +37,9 @@ describe("Testing Alerts in Serial Mode", () => {
       });
 
       await page.click("[onclick='confirmAlert()']");
+      var result = page.locator("#result");
+      await result.waitFor({ state: "visible", timeout: 5000 });
+      await expect(result).toHaveText("You pressed OK!");
    });
 
    test("Cancel Alert and Verify", async () => {
@@ -49,6 +52,9 @@ describe("Testing Alerts in Serial Mode", () => {
       });
 
       await page.click("[onclick='confirmAlert()']");
+      var result = page.locator("#result");
+      await result.waitFor({ state: "visible", timeout: 5000 });
+      await expect(result).toHaveText("You pressed Cancel!");
    });
 
 });
