@@ -46,7 +46,6 @@ export default defineConfig({
     trace: 'on',
     actionTimeout: 10 * 1000,
     navigationTimeout: 50 * 1000,
-    headless: false,
     screenshot: 'only-on-failure',
     colorScheme: 'dark'
        
