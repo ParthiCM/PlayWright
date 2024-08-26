@@ -1,0 +1,10 @@
+config:
+  target: 'https://test.k6.io/'
+  engines:
+    playwright : 
+      launchOptions : 
+        headless : false
+  processor : "./PlaywrightWithArtillery/Artillery.js"
+scenarios : 
+  - engine : playwright
+    testFunction: 'artillery'
